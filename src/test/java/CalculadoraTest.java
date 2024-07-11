@@ -17,7 +17,6 @@ public class CalculadoraTest {
     @BeforeEach
     public void setUp() {
         calculadora = new Calculadora();
-        System.out.println("Configuração inicial para os testes.");
     }
 
     /**
@@ -26,7 +25,6 @@ public class CalculadoraTest {
     @AfterEach
     public void tearDown() {
         calculadora = null;
-        System.out.println("Limpeza após os testes.");
     }
 
     /**
@@ -34,8 +32,7 @@ public class CalculadoraTest {
      */
     @Test
     public void testSoma() {
-        int resultado = calculadora.somar(5, 3);
-        assertEquals(8, resultado);
+        assertEquals(8, calculadora.somar(5, 3));
     }
 
     /**
@@ -43,8 +40,7 @@ public class CalculadoraTest {
      */
     @Test
     public void testSubtracao() {
-        double resultado = calculadora.subtrair(10, 4);
-        assertEquals(6, resultado);
+        assertEquals(6, calculadora.subtrair(10, 4));
     }
 
     /**
@@ -52,8 +48,7 @@ public class CalculadoraTest {
      */
     @Test
     public void testMultiplicacao() {
-        double resultado = calculadora.multiplicar(3, 5);
-        assertEquals(15, resultado);
+        assertEquals(15, calculadora.multiplicar(3, 5));
     }
 
     /**
@@ -61,8 +56,7 @@ public class CalculadoraTest {
      */
     @Test
     public void testDivisao() {
-        double resultado = calculadora.dividir(10, 2);
-        assertEquals(5.0, resultado, 0.0001);
+        assertEquals(5.0, calculadora.dividir(10, 2));
     }
 
     /**
@@ -73,11 +67,5 @@ public class CalculadoraTest {
         assertThrows(IllegalArgumentException.class, () -> calculadora.dividir(10, 0));
     }
 
-    /**
-     * Testar verificação de instancia da calculadora
-     */
-    @Test
-    public void testVerificaInstanciaCalculadora() {
-        assertTrue(calculadora instanceof Calculadora);
-    }
+
 }
